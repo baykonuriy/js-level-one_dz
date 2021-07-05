@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict'
+
+        rubCase()
+
+        function makeArr(){
+            let arr1 = prompt("Введите сумму, которую хотите положить на счет")
+            return arr1
+        }
+
+        function wordEnding (arr){
+            arr.split("")
+            let arr2 = arr[arr.length - 1]
+            let arr3 = arr[arr.length - 2]
+            let arrSt = +arr
+            let rubWord = ''
+            if(arr3 == 1){
+                rubWord = " рублей"
+            } else if(arr2 > 1 && arr2 <= 4 && arr2 !== 0){
+                rubWord = " рубля"
+            } else if(arr2 == 1){
+                rubWord = " рубль"
+            } else if(isNaN(arrSt) == true){
+                rubWord = " это не число"
+            }else{
+                rubWord = " рублей"
+            }
+            return rubWord
+        }
+
+        function rubCase(){
+            let arr1 = makeArr()
+            let rubWord = wordEnding(arr1)
+            alert(arr1 + rubWord)
+            rubCase()
+        }
+
+    </script>
+</body>
+</html>

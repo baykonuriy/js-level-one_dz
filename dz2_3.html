@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        function makeNumber1(){
+            let a = Number(prompt("Введите отрицательное или положительное число"));
+            return a
+        }
+        function makeNumber2(){
+            let b = Number(prompt("Введите еще одно отрицательное или положительное число"));
+            return b
+        }
+        
+        function checkPositivNumb (a, b){
+            let c;
+            if (a >= 0 && b >= 0){
+                c = (a - b);
+                    if (c < 0){
+                        c = "оба знака > 0, поэтому разница = " + -(c);
+                    } else{
+                        c = "оба знака > 0, поэтому разница = " + c;
+                    }
+            } else if(a < 0 && b < 0){
+                c = "оба знака < 0, поэтому умножение = " + (a * b);
+            } else if (a < 0 && b >= 0 || a >= 0 && b < 0){
+                c = "разные знаки, поэтому сложение = " + (a + b);
+            } else{
+                c = "ошибка";
+            }
+            return c;
+        }
+
+        function resuls(){
+            let a = makeNumber1();
+            let b = makeNumber2();
+            let c = checkPositivNumb(a, b);
+            alert(c);
+            resuls();
+        }
+
+        resuls();
+        
+    </script>
+</body>
+</html>

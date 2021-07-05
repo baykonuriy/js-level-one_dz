@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation),
+        // где arg1, arg2 – значения аргументов, operation – строка с названием операции. В зависимости от
+        // переданного значения операции (использовать switch) выполнить одну из арифметических
+        // операций
+        // (использовать функции из задания 4) и вернуть полученное значение.
+
+        function addNumb(numb1, numb2){
+            return result = numb1 + numb2;
+        }
+
+        function subrtactNumb(numb1, numb2){
+            return result = numb1 - numb2;
+        }
+
+        function divisionNumb(numb1, numb2){
+            return result = numb1 / numb2;
+        }
+
+        function multNumb(numb1, numb2){
+            return result = numb1 * numb2;
+        }
+
+        function mathOperation(arg1, arg2, operation){
+            switch(operation){
+                case "сложение":
+                return addNumb(arg1, arg2);
+                case "вычитание":
+                return subrtactNumb(arg1, arg2);
+                case "деление":
+                return divisionNumb(arg1, arg2);
+                case "умножение":
+                return multNumb(arg1, arg2);
+            }
+        }
+        console.log(mathOperation(10, 5, "сложение"))
+        console.log(mathOperation(10, 5, "вычитание"))
+        console.log(mathOperation(10, 5, "деление"))
+        console.log(mathOperation(10, 5, "умножение"))
+    </script>
+</body>
+</html>
