@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict'
+
+       
+
+        function makeArr(){
+            let arr1 = prompt("Введите сумму, которую хотите положить на счет")
+            return arr1
+        }
+
+        function wordEnding1 (arr){
+            arr.split("")
+            let arr2 = arr[arr.length - 1]
+            let arr3 = arr[arr.length - 2]
+            let arrSt = +arr
+            let rubWord = ''
+            if(arr3 == 1){
+                rubWord = " рублей (вычислено одной функцией)"
+            } else if(arr2 > 1 && arr2 <= 4 && arr2 !== 0){
+                rubWord = " рубля (вычисленно одной функцией)"
+            } else if(arr2 == 1){
+                rubWord = " рубль (вычислено одной функцией)"
+            } else if(isNaN(arrSt) == true || arrSt == 0){
+                rubWord = " это не число (вычислено одной функцией)"
+            }else{
+                rubWord = " рублей (вычислено одной функцией)"
+            }
+            return rubWord
+        }
+
+        function wordEnding2 (arr){
+            let numb = parseInt(arr, 10);
+            let str = String(numb);
+            let lastSymb = +str.charAt(str.length - 1);
+            let penultSymb = +str.charAt(str.length - 2);
+            let rubley = penultSymb == 1;
+            let rublya = lastSymb > 1 && lastSymb <= 4 && lastSymb !== 0;
+            let rubl = lastSymb == 1;
+            let notNumb = isNaN(numb) == true;
+            let rubWord = ''
+            if(rubley){
+                rubWord = " рублей (вычислео другой функцией)";
+            } else if(rublya){
+                rubWord = " рубля (вычислено другой функцией)";
+            } else if (rubl){
+                rubWord = " рубль (вычислено другой функцией)";
+            }else if(notNumb){
+                rubWord = " это не число (вычислено другой функцией)"
+            } else{
+                rubWord = " рублей (вычислено другой функцией)";
+            }
+            return rubWord;
+        }
+
+        function rubCase(){
+            let arr1 = makeArr();
+            let rubWord = wordEnding1(arr1);
+            alert(arr1 + rubWord);
+            let rubWord2 = wordEnding2(arr1);
+            alert(parseInt(arr1, 10) + rubWord2);
+            rubCase();
+        }
+
+        rubCase()
+
+    </script>
+</body>
+</html>
